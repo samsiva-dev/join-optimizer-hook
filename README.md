@@ -29,7 +29,12 @@ join-optimizer-hook/
 │   ├── join_optimizer--1.0.sql    # Installation SQL
 │   └── join_optimizer--uninstall.sql
 ├── regression/
-│   ├── test.sql              # Regression tests
+│   ├── sql/                  # Regression test SQL files
+│   │   └── join_optimizer_regtest.sql
+│   ├── expected/             # Expected test outputs
+│   │   └── join_optimizer_regtest.out
+│   ├── results/              # Actual test outputs (generated)
+│   ├── regress_schedule      # Test schedule file
 │   ├── benchmark_setup.sql   # Benchmark data setup
 │   └── benchmark_safe.sql    # Benchmark timing script
 ├── Makefile

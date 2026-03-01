@@ -1,0 +1,5 @@
+# Join Optimizer Regression Test Schedule
+# Run with: make installcheck
+
+# Basic extension tests
+test: join_optimizer_regtest

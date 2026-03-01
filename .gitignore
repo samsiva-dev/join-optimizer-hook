@@ -9,3 +9,6 @@
 *.log
 *.tmp
 *.DS_Store
+/regression/results
+/regression/regression.diffs
+/regression/regression.out

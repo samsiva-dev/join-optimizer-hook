@@ -15,6 +15,12 @@ OBJS = src/join_optimizer_main.o \
 # SQL files - reference files in sql/ directory
 DATA = sql/join_optimizer--1.0.sql
 
+# Regression tests configuration
+# Tests are in regression/sql/, expected output in regression/expected/
+# Results go to regression/results/, regression/regression.diffs, regression/regression.out
+REGRESS = join_optimizer_regtest
+REGRESS_OPTS = --inputdir=regression --outputdir=regression
+
 PGFILEDESC = "join_optimizer - Statistics-based join order optimizer"
 
 # Include paths
@@ -42,15 +48,16 @@ regression: install
 # Clean all generated files
 clean-all: clean
 	rm -f src/*.o *.so *.bc
+	rm -rf regression/results regression/regression.diffs regression/regression.out
 
 # Format source code (requires clang-format)
 format:
 	clang-format -i src/*.c include/*.h
 
-# Check for common issues
-check:
+# Lint: Check for common issues (use 'lint' to avoid conflict with PGXS 'check')
+lint:
 	@echo "Checking for common issues..."
-	@grep -rn "palloc\|pfree" src/ | head -20
+	@grep -rn "palloc\\|pfree" src/ | head -20
 	@echo "Done."
 
 # Install SQL files to proper location
