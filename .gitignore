@@ -1,0 +1,11 @@
+/.vscode
+/build
+.dylib
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+*.log
+*.tmp
+*.DS_Store

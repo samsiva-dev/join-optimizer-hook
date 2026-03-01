@@ -1,0 +1,6 @@
+# join_optimizer extension
+comment = 'Join optimizer hook extension with statistics-based optimization'
+default_version = '1.0'
+module_pathname = '$libdir/join_optimizer'
+relocatable = true
+requires = ''
